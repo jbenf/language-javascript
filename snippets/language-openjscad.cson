@@ -1,0 +1,266 @@
+'.source.jscad':
+  #JavaScript
+  'Object Method':
+    'prefix': 'kf'
+    'body': '${1:methodName}: function (${2:attribute}) {\n\t$3\n}${4:,}'
+  'Object key — key: "value"':
+    'prefix': 'kv'
+    'body': '${1:key}: ${2:\'${3:value}\'}${4:, }'
+  'Prototype':
+    'prefix': 'proto'
+    'body': '${1:ClassName}.prototype.${2:methodName} = function ($3) {\n\t$0\n};'
+  'do':
+    'prefix': 'do'
+    'body': 'do {\n\t$2\n} while (${1:true});'
+  'condition ? true : false':
+    'prefix': 'tern'
+    'body': '${1:condition} ? ${2:true} : ${3:false}'
+  'if':
+    'prefix': 'if'
+    'body': 'if (${1:true}) {\n\t$2\n}'
+  'if … else':
+    'prefix': 'ife'
+    'body': 'if (${1:true}) {\n\t$2\n} else {\n\t$3\n}'
+  'else':
+    'prefix': 'else'
+    'body': 'else {\n\t$1\n}'
+  'else if':
+    'prefix': 'elseif'
+    'body': 'else if (${1:true}) {\n\t$2\n}'
+  'for':
+    'prefix' : 'for'
+    'body' : 'for (var ${2:i} = 0; ${2:i} < ${1:array}.length; ${2:i}++) {\n\t${1:array}[${2:i}]$3\n}'
+  'for in':
+    'prefix': 'forin'
+    'body': 'for (var ${1:variable} in ${2:object}) {\n\t${3:if (${2:object}.hasOwnProperty(${1:variable})) {\n\t\t$4\n\t\\}}\n}'
+  'for of':
+    'prefix': 'forof'
+    'body': 'for (${1:variable} of ${2:iterable}) {\n\t$3\n}'
+  'Function':
+    'prefix': 'fun'
+    'body': 'function ${1:functionName}($2) {\n\t$0\n}'
+  'Anonymous Function':
+    'prefix': 'f'
+    'body': 'function ($1) {\n\t$2\n}'
+  'Arrow Function':
+    'prefix': 'af'
+    'body': '($1) => {\n\t$2\n}'
+  # 'Generator':
+  #   'prefix': 'gen',
+  #   'body': 'function* ${1:functionName}($2) {\n\t$0\n}'
+  # 'Anonymous Generator':
+  #   'prefix': 'g'
+  #   'body': 'function* ($1) {\n\t$2\n}'
+  # 'getElementsByClassName':
+  #   'prefix': 'get'
+  #   'body': 'getElementsByClassName(${1:\'${2:className}\'})$3'
+  # 'getElementsByName':
+  #   'prefix': 'getn'
+  #   'body': 'getElementsByName(${1:\'${2:name}\'})$3'
+  # 'getElementsByTagName':
+  #   'prefix': 'gett'
+  #   'body': 'getElementsByTagName(${1:\'${2:tagName}\'})$3'
+  # 'getElementById':
+  #   'prefix': 'geti'
+  #   'body': 'getElementById(${1:\'${2:id}\'})$3'
+  # 'querySelector':
+  #   'prefix': 'qs'
+  #   'body': 'querySelector(${1:\'${2:query}\'})$3'
+  # 'querySelectorAll':
+  #   'prefix': 'qsa'
+  #   'body': 'querySelectorAll(${1:\'${2:query}\'})$3'
+  # 'Immediately-Invoked Function Expression':
+  #   'prefix': 'iife'
+  #   'body': '(function() {\n\t${1:\'use strict\';\n}\t$2\n}());'
+  # 'log':
+  #   'prefix': 'log'
+  #   'body': 'console.log($1);$0'
+  # 'warn':
+  #   'prefix': 'warn'
+  #   'body': 'console.warn($1);$0'
+  # 'error':
+  #   'prefix': 'error'
+  #   'body': 'console.error($1);$0'
+  # 'inspect':
+  #   'prefix': 'inspect'
+  #   'body': 'console.log(require(\'util\').inspect($0, { depth: null }));'
+  # 'new Promise':
+  #   'prefix': 'prom'
+  #   'body': 'new Promise(function(resolve, reject) {\n\t$1\n});$0'
+  # 'setInterval function':
+  #   'prefix': 'interval'
+  #   'body': 'setInterval(${2:function () {\n\t$3\n\\}}, ${1:10});'
+  # 'setTimeout function':
+  #   'prefix': 'timeout'
+  #   'body': 'setTimeout(${2:function () {\n\t$3\n\\}}, ${1:10});'
+  'switch':
+    'prefix': 'switch'
+    'body': 'switch (${1:expression}) {\n\tcase ${2:expression}:\n\t\t$4\n\t\tbreak;$5\n\tdefault:\n\t\t$3\n}'
+  'case':
+    'prefix': 'case'
+    'body': 'case ${1:expression}:\n\t$2\n\tbreak;'
+  'try':
+    'prefix': 'try'
+    'body': 'try {\n\t$1\n} catch (${2:e}) {\n\t$3\n}${4: finally {\n\t$5\n\\}}'
+  'while':
+    'prefix': 'while'
+    'body': 'while (${1:true}) {\n\t$2\n}'
+  'Start Docblock':
+    'prefix': '/**'
+    'body': '/**\n * $1\n */$0'
+  # 'CommonJS require':
+  #   'prefix': 'req'
+  #   'body': 'const ${1:module} = require(\'${1:module}\');'
+  'Class':
+    'prefix': 'class'
+    'body': 'class ${1:ClassName} {\n\tconstructor($2) {\n\t\t$3\n\t}\n}'
+  # 'export function':
+  #   'prefix': 'expfun'
+  #   'body': 'exports.${1:functionName} = function ($2) {\n\t${3:// body...}\n};'
+  # 'export module':
+  #   'prefix': 'expmod'
+  #   'body': 'module.exports = ${1:name};'
+
+
+  #OpenJSCAD
+  # 'Function':
+  #   'prefix': 'fun'
+  #   'body': 'function ${1:function_name}(${2:args}) = ${0:// body...};'
+  # 'Module':
+  #   'prefix': 'mod'
+  #   'body': 'module ${1:module_name}(${2:args}) {\n\t${0:// body...}\n}'
+  # 'assign':
+  #   'prefix': 'ass'
+  #   'body': 'assign (${1:x} = ${2:0}) ${4:{\n\t${0:object();}\n\\}}'
+  # 'circle':
+  #   'prefix': 'cir'
+  #   'body': 'circle(r=${1:10});'
+  # 'color':
+  #   'prefix': 'col'
+  #   'body': 'color(${1:[${2:0}/255, ${3:0}/255, ${4:0}/255]}) ${5:{\n\t${0:object();}\n\\}}'
+  'cone':
+    'prefix': 'cone'
+    'body': 'cylinder({r1:${1:3}, r2:${2:0}, h:${3:10}${4:, center:${5:true}}})'
+  'cube':
+    'prefix': 'cube'
+    'body': 'cube({size:${1:[${2:10}, ${3:10}, ${4:10}]}${5:, center:${6:true}}${7:, round:${8:true}}})'
+  'cylinder':
+    'prefix': 'cylinder'
+    'body': 'cylinder({r:${1:3}, h:${2:10}${3:, center:${4:true}}})'
+  'difference':
+    'prefix': 'difference'
+    'body': 'difference(\n\t${1:object()},\n\t${2:object()}\n)'
+  # 'echo':
+  #   'prefix': 'echo'
+  #   'body': 'echo(str("${1:Variable = }", ${2:x}));'
+  # 'for (...) {...}':
+  #   'prefix': 'for'
+  #   'body': 'for (${20:i}=[${1:0}:${2:10}]) {\n\t${}$0\n}\n'
+  # 'hull':
+  #   'prefix': 'hul'
+  #   'body': 'hull() {\n\t${0}\n}'
+  # 'if ... else':
+  #   'prefix': 'ife'
+  #   'body': 'if (${1:true}) {\n\t${0:$TM_SELECTED_TEXT}\n} else {\n\t\n}'
+  # 'if':
+  #   'prefix': 'if'
+  #   'body': 'if (${1:true}) {\n\t${0:$TM_SELECTED_TEXT}\n}'
+  # 'import_stl':
+  #   'prefix': 'is'
+  #   'body': 'import_stl("${1:filename.stl}", convexity=${2:10});'
+  # 'include':
+  #   'prefix': 'inc'
+  #   'body': 'include <${1:filename.scad}>'
+  'intersection':
+    'prefix': 'intersection'
+    'body': 'intersection(\n\t${1:object()},\n\t${2:object()}\n)'
+  # 'intersection_for (...) {...}':
+  #   'prefix': 'ifor'
+  #   'body': 'for (${20:i} = [${1:0}:${2:10}]) {\n\t${}$0\n}\n'
+  # 'linear_extrude':
+  #   'prefix': 'le'
+  #   'body': 'linear_extrude(height=${1:10}, center=${2:true}, convexity=${3:10}, twist=${4:0}) {\n\t${0}\n}'
+  # 'minkowski':
+  #   'prefix': 'mink'
+  #   'body': 'minkowski() {\n\t${0}\n}'
+  # 'mirror':
+  #   'prefix': 'mir'
+  #   'body': 'mirror([${1:1}, ${2:0}, ${3:0}]) {\n\t${0}\n}\n'
+  'mirroredX(...)':
+    'prefix': '.mirroredX'
+    'body': '.mirroredX()'
+  'mirroredY(...)':
+    'prefix': '.mirroredY'
+    'body': '.mirroredY()'
+  'mirroredZ(...)':
+    'prefix': '.mirroredZ'
+    'body': '.mirroredZ()'
+  # 'multmatrix':
+  #   'prefix': 'mul'
+  #   'body': 'multmatrix([\n\t[${1:1}, ${2:0}, ${3:0}, ${4:10}],\n\t[${5:0}, ${6:1}, ${7:0}, ${8:20}],\n\t[${9:0}, ${10:0}, ${11:1}, ${12:30}],\n\t[${13:0}, ${14:0}, ${15:0},  ${16:1}]\n]) {\n\t${0}\n}\n'
+  # 'polygon':
+  #   'prefix': 'polyg'
+  #   'body': 'polygon(points=[${1:[0,0],[100,0],[0,100],[10,10],[80,10],[10,80]}], paths=[${2:[0,1,2],[3,4,5]}]);\n'
+  # 'polyhedron':
+  #   'prefix': 'poly'
+  #   'body': 'polyhedron(points=[${1:[0,0,0],[100,0,0],[0,100,0],[0,100,100]}], faces=[${2:[0,1,2],[1,0,3],[0,2,3],[2,1,3]}]);'
+  # 'power':
+  #   'prefix': 'pow'
+  #   'body': 'pow(${1:base},${2:exponent})'
+  # 'projection':
+  #   'prefix': 'proj'
+  #   'body': 'projection(cut=${1:true}) import_stl("${2:filename.stl}");\n'
+  # 'render':
+  #   'prefix': 'ren'
+  #   'body': 'render() {\n\t$1\n}\n'
+  # 'rotate(...)':
+  #   'prefix': 'r'
+  #   'body': 'rotate([${1:0}, ${2:0}, ${3:0}]) ${0}'
+  # 'rotate(...) {...}':
+  #   'prefix': 'rot'
+  #   'body': 'rotate([${1:10}, ${2:10}, ${3:10}]) ${4:{\n\t${0:object();}\n\\}}'
+  'rotateX(...)':
+    'prefix': '.rotateX'
+    'body': '.rotateX(${1:1})'
+  'rotateY(...)':
+    'prefix': '.rotateY'
+    'body': '.rotateY(${1:1})'
+  'rotateZ(...)':
+    'prefix': '.rotateZ'
+    'body': '.rotateZ(${1:1})'
+  # 'rotate_extrude':
+  #   'prefix': 're'
+  #   'body': 'rotate_extrude(convexity=${1:10}) ${4:{\n\t${0:object();}\n\\}}'
+  'scale(...)':
+    'prefix': '.scale'
+    'body': '.scale([${1:1}, ${2:2}, ${3:3}])'
+  'sphere':
+    'prefix': 'sphere'
+    'body': 'sphere({r:${1:10}${2:, center:${3:true}}${4:, fn:${5:100}}})'
+  # 'square':
+  #   'prefix': 'squ'
+  #   'body': 'square(size=${1:[${2:10}, ${3:10}]}${4:, center=${5:true}});'
+  # 'surface':
+  #   'prefix': 'surf'
+  #   'body': 'surface(file="${1:filename.dat}", center=${2:true}${0:, convexity=5});\n'
+  # 'text':
+  #   'prefix': 'text'
+  #   'body': 'text("${1:TEXT}", size=${2:10}, font="${3:Liberation Sans}", halign="${4:left}", valign="${5:baseline}",\n\tspacing=${6:1.0}, direction="${7:ltr}", language="${8:en}", script="${9:latin}")'
+  'torus':
+    'prefix': 'torus'
+    'body': 'torus({ri:${1:1.5}, ro:${2:3}${3:, fni:${4:16}}${5:, fno:${6:32}}${7:, roti:${8:45}}})'
+  # 'translate(...)':
+  #   'prefix': 't'
+  #   'body': 'translate([${1:0}, ${2:0}, ${3:0}]) ${0}'
+  # 'translate(...) {...}':
+  #   'prefix': 'tran'
+  #   'body': 'translate([${1:0}, ${2:0}, ${3:0}]) ${4:{\n\t${0:object();}\n\\}}'
+  'translate(...)':
+    'prefix': '.translate'
+    'body': '.translate([${1:1}, ${2:2}, ${3:3}])'
+  'union':
+    'prefix': 'union'
+    'body': 'union(\n\t${1:object()},\n\t${2:object()}\n)'
+  # 'use':
+  #   'prefix': 'use'
+  #   'body': 'use <${1:filename.scad}>'

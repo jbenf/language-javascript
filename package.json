@@ -1,19 +1,19 @@
 {
-  "name": "language-javascript",
+  "name": "language-openjscad",
   "version": "0.125.1",
-  "description": "JavaScript language support in Atom",
+  "description": "OpenJSCAD language support in Atom",
   "engines": {
     "atom": "*",
     "node": "*"
   },
-  "homepage": "http://atom.github.io/language-javascript",
+  "homepage": "https://github.com/jbenf/language-openjscad",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/language-javascript.git"
+    "url": "https://github.com/jbenf/language-openjscad"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atom/language-javascript/issues"
+    "url": "https://github.com/jbenf/language-openjscad/issues"
   },
   "devDependencies": {
     "coffeelint": "^1.10.1"
